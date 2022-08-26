@@ -1,4 +1,4 @@
-package com.gregorchristiaens.learningandroid
+package com.gregorchristiaens.learningandroid.first
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.gregorchristiaens.learningandroid.R
 import com.gregorchristiaens.learningandroid.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
