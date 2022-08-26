@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.gregorchristiaens.learningandroid.databinding.FragmentSecondBinding
+import kotlinx.coroutines.flow.collect
 
 class SecondFragment : Fragment() {
 
@@ -17,11 +19,17 @@ class SecondFragment : Fragment() {
      **/
     private val binding get() = _binding!!
 
+    private lateinit var viewModel: SecondViewModel
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(this)[SecondViewModel::class.java]
+        binding.vm = viewModel
+        binding.lifecycleOwner = this
         return binding.root
 
     }
